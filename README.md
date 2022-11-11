@@ -2,7 +2,7 @@
 ![](https://i.ibb.co/BLyMcPD/Piedra-Papel-OTijera.png)
 
 
-####Descripción
+#### Descripción
 
 El famoso juego Piedra Papel o Tijera, donde en esta ocacion jugas contra la Inteligencia Artificial, eligiendo entre Piedra, Papel o Tijera, y ganando o perdiendo puntos contra la IA
 
