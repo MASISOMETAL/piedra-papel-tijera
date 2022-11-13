@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { View, Text, TouchableOpacity, Image, Alert } from "react-native";
+import { View, Text, TouchableOpacity, Image, Alert, ImageBackground } from "react-native";
 import { styles } from "./styles";
 import { useSelector, useDispatch } from "react-redux";
 import { Ganar, Perder, SaveData } from "../../../store/actions";
@@ -86,13 +86,19 @@ const Game = () =>{
     };
 
     return(
-        <View style={styles.container}>
+        <ImageBackground 
+            style={styles.imageBackGround} 
+            source={require("../../../../assets/images/fondo.gif")} 
+        >
             <View style={styles.containerBtnPC}>
                 <View style={styles.btnPC}>
                     <Image style={styles.imagePC} source={pcSelected} />
                 </View>
                 <View style={styles.containerPuntos}>
-                    <Text>Puntaje: {filtrado[0].puntos}</Text>
+                    <View style={{flexDirection: "row"}}>
+                        <Text style={styles.textPoint}>Puntaje:  </Text>
+                        <Text>{filtrado[0].puntos}</Text>
+                    </View>
                 </View>
             </View>
             <View style={styles.containerBtnUser}>
@@ -106,7 +112,7 @@ const Game = () =>{
                 <Image style={styles.imageUser} source={require("../../../../assets/images/Tijera.png")} />
                 </TouchableOpacity>
             </View>
-        </View>
+        </ImageBackground>
     )
 }
 

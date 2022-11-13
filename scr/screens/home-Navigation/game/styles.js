@@ -15,7 +15,11 @@ export const styles = StyleSheet.create({
 
     },
     containerPuntos:{
-        marginTop: height * 0.15,
+        marginTop: height * 0.13,
+        backgroundColor: Colors.white,
+        //borderWidth: 2,
+        padding: width * 0.03,
+        borderRadius: 7,
     },
     containerBtnUser:{
         flex: 1,
@@ -49,5 +53,13 @@ export const styles = StyleSheet.create({
         height: width * 0.27,
         width: width * 0.27,
         resizeMode: "cover",
+    },
+    textPoint:{
+        fontFamily: "Inter-Bold",
+    },
+    imageBackGround:{
+        flex: 1,
+        width: width,
+        height: height,
     },
 });
