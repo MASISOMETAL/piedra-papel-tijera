@@ -8,4 +8,9 @@ export const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: Colors.primary,
     },
+    imageBackGround:{
+        flex: 1,
+        width: width,
+        height: height,
+    },
 });

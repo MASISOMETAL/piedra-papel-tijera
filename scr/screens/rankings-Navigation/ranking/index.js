@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import { View, Text, FlatList } from "react-native";
+import { View, Text, FlatList, ImageBackground } from "react-native";
 import { styles } from "./styles";
 import { useSelector} from "react-redux";
 import { RenderItemRanking } from "../../../components";
@@ -20,18 +20,21 @@ const Ranking = () =>{
     })
     newOrder.reverse()
 
-    const RenderItem = ({item}) =>(
-        <RenderItemRanking item={item} />
+    const RenderItem = ({item, index}) =>(
+        <RenderItemRanking item={item} index={index} />
     )
 
     return(
-        <View style={styles.container}>
+        <ImageBackground 
+            style={styles.imageBackGround} 
+            source={require("../../../../assets/images/fondo.gif")} 
+        >
             <FlatList
             data={userData}
             keyExtractor={(item)=> item.nombre}
             renderItem={RenderItem}
             />
-        </View>
+        </ImageBackground>
     )
 }
 

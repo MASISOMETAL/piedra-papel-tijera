@@ -11,7 +11,6 @@ const Game = () =>{
     const playeractive = useSelector((state)=> state.PlayerReductor.players);
     
     const filtrado = playeractive.filter((i)=> i.nombre == selected.nombre)
-    console.log(filtrado[0].puntos)
     
     const [pcSelected, setPcSelected] = useState(require("../../../../assets/images/PiedraPapelOTijera.png"));
     const Piedra = 0; const Papel = 1; const Tijera = 2;
