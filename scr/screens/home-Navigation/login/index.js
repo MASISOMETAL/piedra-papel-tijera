@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import { View, Text, Image, TouchableOpacity, TouchableWithoutFeedback, ImageBackground } from "react-native";
-import { ModalCustom } from "../../../components";
+import { ModalAcercaDe, ModalCustom, ModalTutorial } from "../../../components";
 import { LoadPlayer } from "../../../store/actions";
 import { styles } from "./styles";
 import { useDispatch } from "react-redux";
@@ -16,6 +16,8 @@ const Login = ({navigation}) =>{
     },[])
 
     const [modalOn, setModalOn] = useState(false);
+    const [modalTutoOn, setModalTutoOn] = useState(false);
+    const [modalAcercaDeOn, setModalAcercaDeOn] = useState(false);
 
     return(
         <ImageBackground 
@@ -32,17 +34,20 @@ const Login = ({navigation}) =>{
             </View>
             <View style={styles.containerInfo}>
                 <View style={{flexDirection: "row"}}>
-                    <TouchableOpacity style={styles.btnInfo}>
+                    <TouchableOpacity style={styles.btnInfo} onPress={()=> setModalTutoOn(!modalTutoOn)}>
                         <Ionicons name="newspaper" size={30} color={Colors.primary} style={styles.iconBtn} />
                         <Text style={styles.textBtn}>Tutorial</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.btnInfo}>
+                    <TouchableOpacity style={styles.btnInfo} onPress={()=> setModalAcercaDeOn(!modalTutoOn)}>
                         <Ionicons name="information-circle" size={30} color={Colors.primary} style={styles.iconBtn} />
                         <Text style={styles.textBtn}>Acerca de</Text>
                     </TouchableOpacity>
                 </View>
                 <View style={{flexDirection: "row"}}>
-                    <TouchableOpacity style={styles.btnInfo}>
+                    <TouchableOpacity 
+                        style={styles.btnInfo}
+                        disabled={true}
+                    >
                         <Ionicons name="git-branch" size={30} color={Colors.primary} style={styles.iconBtn} />
                         <Text style={styles.textBtn}>Version 1.0</Text>
                     </TouchableOpacity>
@@ -53,6 +58,8 @@ const Login = ({navigation}) =>{
                 </View>
             </View>
             <ModalCustom modalOn={modalOn} setModalOn={setModalOn} navigation={navigation} />
+            <ModalTutorial modalTutoOn={modalTutoOn} setModalTutoOn={setModalTutoOn} navigation={navigation} />
+            <ModalAcercaDe modalAcercaDeOn={modalAcercaDeOn} setModalAcercaDeOn={setModalAcercaDeOn} navigation={navigation} />
         </ImageBackground>
     )
 }

@@ -29,14 +29,20 @@ const PlayersReducers = (state = initialState, action) =>{
         case SUMAR:
                 const search = state.players.map(e=> e.nombre);
                 const index = search.indexOf(action.nombre);
-                state.players[index].puntos = action.puntos;
-            return state
+                //state.players[index].puntos = action.puntos;
+            return {
+                ...state,
+                player : state.players[index].puntos = action.puntos
+            }
 
         case RESTAR:
                 const searchr = state.players.map(e=> e.nombre);
                 const indexr = searchr.indexOf(action.nombre);
-                state.players[indexr].puntos = action.puntos;
-            return state
+                //state.players[indexr].puntos = action.puntos;
+            return {
+                ...state,
+                player : state.players[indexr].puntos = action.puntos
+            }
 
         default:
             return state
